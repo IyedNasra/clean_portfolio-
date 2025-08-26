@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iyed Nasra | Portfolio</title>
+  <meta name="description" content="Portfolio of Iyed Nasra, PhD student in Computer Science focusing on optimization and machine learning; research, projects, competitive programming, and contact information." />
+  <link rel="canonical" href="https://iyed-nasra.github.io/" />
+
+  <meta property="og:title" content="Iyed Nasra | Portfolio" />
+  <meta property="og:description" content="Academic portfolio of Iyed Nasra — optimization, machine learning, and algorithmic problem solving." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://iyed-nasra.github.io/" />
+  <meta property="og:image" content="https://iyed-nasra.github.io/assets/img/social-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Iyed Nasra",
+    "url": "https://iyed-nasra.github.io/",
+    "sameAs": ["https://www.linkedin.com/in/iyed-nasra"],
+    "jobTitle": "PhD Student in Computer Science",
+    "worksFor": { "@type": "Organization", "name": "National School of Computer Science (Manouba, Tunisia)" },
+    "email": "mailto:iyed.nasra.in@gmail.com"
+  }
+  </script>
+
+  <style>
+    :root{
+      --color-accent:#00bfff;
+      --color-text:#e5eef6;
+      --color-muted:#a8b3bd;
+      --color-bg:#0b0f14;
+      --color-panel:#0f141b;
+      --color-border:#1c2733;
+      --gradient-hero:
+        radial-gradient(1200px 600px at 10% 10%, rgba(0,191,255,.15), transparent 50%),
+        radial-gradient(1000px 500px at 90% 20%, rgba(0,191,255,.10), transparent 50%),
+        #0b0f14;
+    }
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--color-text);
+      background:var(--color-bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(0,0,0,.55); backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--color-border);
+      padding:12px 0;
+    }
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; justify-content:center; gap:28px;
+    }
+    nav a{color:var(--color-text); text-decoration:none; font-weight:600}
+    nav a:hover{color:var(--color-accent)}
+
+    .skip-link{
+      position:absolute; left:0; top:-40px; background:var(--color-accent); color:#fff;
+      padding:8px; z-index:100;
+    }
+    .skip-link:focus{top:0}
+
+    main{max-width:1200px; margin:0 auto; padding:0 1rem 3rem}
+
+    .hero{
+      display:grid; grid-template-columns:1fr; gap:2rem;
+      align-items:center; text-align:left;
+      padding:6rem 1rem; min-height:90vh;
+      max-width:1200px; margin:0 auto;
+      position:relative; isolation:isolate;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0 auto 0 50%;
+      width:100vw; transform:translateX(-50%);
+      background:var(--gradient-hero);
+      z-index:-1;
+    }
+    @media (min-width:992px){ .hero{grid-template-columns:1fr 1fr} }
+    .hero-subtitle{font-size:1.5rem; font-weight:300; color:var(--color-muted)}
+    .hero-title{font-size:4.2rem; font-weight:800; margin:.4rem 0}
+    .hero-tags{font-size:1.2rem; margin-bottom:2rem; color:var(--color-text)}
+    .hero-image{
+      width:100%; max-width:400px; height:400px; margin:0 auto;
+      border-radius:50%; border:6px solid var(--color-accent);
+      background:#222 url('assets/img/profile.jpg') center/cover no-repeat;
+      box-shadow:0 0 30px rgba(0,191,255,.4);
+    }
+
+    .section-header{
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      margin:1rem 0 .5rem 0;
+    }
+    .section-title{margin:0; font-size:clamp(1.4rem,1.2vw + 1rem,1.9rem)}
+    .section-controls{display:inline-flex; gap:.5rem}
+
+    .scroll-btn{
+      appearance:none; border:none; border-radius:0;
+      background:var(--color-accent); color:#fff;
+      font-weight:800; text-transform:uppercase; letter-spacing:.02em;
+      padding:.55rem 1rem; cursor:pointer; line-height:1; font-size:1.1rem;
+      box-shadow:0 0 8px rgba(0,191,255,.6);
+      transition:transform .12s ease-in-out, box-shadow .18s ease-in-out, filter .18s ease-in-out;
+    }
+    .scroll-btn:hover{transform:scale(1.05); box-shadow:0 0 14px rgba(0,191,255,.9)}
+    .scroll-btn:focus{outline:none; filter:brightness(1.05)}
+    .scroll-btn:active{transform:scale(.98)}
+
+    .button{
+      display:inline-block; border:none; border-radius:0; background:var(--color-accent); color:#fff;
+      padding:.9rem 1.4rem; font-weight:800; letter-spacing:.02em; text-transform:uppercase;
+      text-decoration:none; box-shadow:0 0 8px rgba(0,191,255,.6);
+      transition:transform .12s ease-in-out, box-shadow .18s ease-in-out, filter .18s ease-in-out;
+    }
+    .button:hover{transform:translateY(-1px) scale(1.02); box-shadow:0 0 14px rgba(0,191,255,.9)}
+    .button:focus{outline:none; filter:brightness(1.05)}
+    .button:active{transform:translateY(0) scale(.99)}
+
+    .horizontal-scroller{
+      display:flex; gap:1.25rem; overflow-x:auto; padding-bottom:1.25rem;
+      scroll-snap-type:x mandatory; scroll-behavior:smooth; -webkit-overflow-scrolling:touch;
+      scrollbar-width:auto; scrollbar-color:var(--color-accent) #0f141b;
+      align-items: stretch;
+    }
+    .horizontal-scroller > *{flex:0 0 auto; scroll-snap-align:start}
+    .horizontal-scroller::-webkit-scrollbar{height:12px}
+    .horizontal-scroller::-webkit-scrollbar-track{background:#0f141b}
+    .horizontal-scroller::-webkit-scrollbar-thumb{background:var(--color-accent); border-radius:0}
+    .horizontal-scroller::-webkit-scrollbar-thumb:hover{filter:brightness(.9)}
+
+    .image-text-card{
+      width:300px; flex-shrink:0; display:flex; flex-direction:column; overflow:hidden;
+      background:var(--color-panel); border:1px solid var(--color-border); border-radius:8px;
+      box-shadow:0 1px 2px rgba(0,0,0,.25);
+      height: 400px;
+    }
+    .image-text-card img{width:100%; height:180px; object-fit:cover; display:block; transition:transform .3s ease}
+    .image-text-card:hover img{transform:scale(1.05)}
+    .card-content{padding:1rem; flex-grow: 1; overflow-y: auto;}
+    .card-content h3{margin:.25rem 0 .25rem 0; font-size:1.05rem}
+    .card-content p{margin:.25rem 0 0 0; color:var(--color-muted); font-size:.92rem}
+    
+    .card-anchor{
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+    }
+
+    .intro-text-card{
+      width:300px; flex-shrink:0; border:none; background:transparent; color:var(--color-muted);
+      height: 400px;
+    }
+
+    footer{
+      text-align:center; padding:3rem 1rem; border-top:1px solid var(--color-border); margin-top:3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cp">Competitive Programming</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero" aria-label="Introduction">
+      <div class="hero-text">
+        <p class="hero-subtitle">PhD Student</p>
+        <h1 class="hero-title">Iyed Nasra</h1>
+        <p class="hero-tags">Competitive Programmer | Optimization &amp; AI Expert</p>
+        <a href="assets/cv.pdf" class="button">Download CV</a>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-header">
+        <h2 id="about-title" class="section-title">About Me</h2>
+        <div class="section-controls" role="group" aria-label="Scroll about">
+          <button class="scroll-btn prev" type="button" aria-label="Scroll left">‹</button>
+          <button class="scroll-btn next" type="button" aria-label="Scroll right">›</button>
+        </div>
+      </div>
+      <div class="horizontal-scroller">
+        <div class="intro-text-card">
+          I am a PhD student in Computer Science with expertise in Optimization and AI, and a strong interest in competitive programming. My academic path emphasizes efficient learning algorithms and their mathematical foundations.
+        </div>
+        <a href="https://www.facebook.com/pilote.gafsa/" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/LPG.jpeg" alt="Lycée Pilote de Gafsa logo">
+            <div class="card-content">
+              <h3>Baccalaureate in Mathematics</h3>
+              <p>Lycée Pilote de Gafsa (2019)</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://isa2m.rnu.tn/" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/ISAMM.jpeg" alt="ISAMM logo">
+            <div class="card-content">
+              <h3>National Higher Diploma in Big Data &amp; Data Analysis</h3>
+              <p>Higher Institute of Multimedia Arts (2019–2022)</p>
+            </div>
+          </div>
+        </a>
+        <a href="http://esen.tn/" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/ESEN.jpg" alt="ESEN logo">
+            <div class="card-content">
+              <h3>Master’s Degree in Web Intelligence</h3>
+              <p>Higher School of Digital Economy (2022–2024)</p>
+            </div>
+          </div>
+        </a>
+        <a href="http://www.ensi.rnu.tn/" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/ENSI.jpg" alt="ENSI logo">
+            <div class="card-content">
+              <h3>PhD Student in Computer Science</h3>
+              <p>National School of Computer Science (2024–Present)</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <div class="section-header">
+        <h2 id="research-title" class="section-title">Research &amp; Publications</h2>
+        <div class="section-controls" role="group" aria-label="Scroll research">
+          <button class="scroll-btn prev" type="button" aria-label="Scroll left">‹</button>
+          <button class="scroll-btn next" type="button" aria-label="Scroll right">›</button>
+        </div>
+      </div>
+      <div class="horizontal-scroller">
+        <div class="intro-text-card">Here you can find my research publications.</div>
+        <a href="https://doi.org/10.1145/3712256.372644" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/gecco.png" alt="">
+            <div class="card-content">
+              <h3>Orthogonal Genetic Algorithm for Efficient Delivery Route Planning in TSP-D</h3>
+              <p>Iyed Nasra, Hervé Camus, Ghaith Manita, Amine Dhraief, Ouajdi Korbaa. GECCO ’25, pp. 1443–1452.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-header">
+        <h2 id="projects-title" class="section-title">Projects</h2>
+        <div class="section-controls" role="group" aria-label="Scroll projects">
+          <button class="scroll-btn prev" type="button" aria-label="Scroll left">‹</button>
+          <button class="scroll-btn next" type="button" aria-label="Scroll right">›</button>
+        </div>
+      </div>
+      <div class="horizontal-scroller">
+        <div class="intro-text-card">Explore selected projects and case studies.</div>
+        <a href="#" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/ESEN.jpg" alt="">
+            <div class="card-content">
+              <h3>Master’s Thesis — Choquet Fuzzy Integral Based Ensemble Learning for Credit Score Modelling</h3>
+              <p>Supervisor: Tawfik Ben Amor (ESEN). The approach composes neural and boosting models and fuses predictions through the Choquet fuzzy integral to represent interdependencies.</p>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/ooredoo.png" alt="">
+            <div class="card-content">
+              <h3>Ooredoo Tunisia — Computer Vision Engineer Intern</h3>
+              <p>Objective: robust extraction from passport MRZ. Outcome: an API-served model exceeding 95% accuracy, accelerating interactions and form population.</p>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/digibrain.png" alt="">
+            <div class="card-content">
+              <h3>DigiBrain Agency — Data Analyst Intern</h3>
+              <p>Objective: persistent awareness of Startup Act updates. Outcome: a live ingestion scraper, automated cleaning, and Power BI dashboards.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="cp" aria-labelledby="cp-title">
+      <div class="section-header">
+        <h2 id="cp-title" class="section-title">Competitive Programming</h2>
+        <div class="section-controls" role="group" aria-label="Scroll competitive programming">
+          <button class="scroll-btn prev" type="button" aria-label="Scroll left">‹</button>
+          <button class="scroll-btn next" type="button" aria-label="Scroll right">›</button>
+        </div>
+      </div>
+      <div class="horizontal-scroller">
+        <div class="intro-text-card">My competitive programming journey.</div>
+        <a href="#" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/codeforces.jpg" alt="">
+            <div class="card-content">
+              <h3>Codeforces Handle: Slingshot</h3>
+              <p>Active on Codeforces under the handle Slingshot with emphasis on algorithms and optimization.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="certifications" aria-labelledby="certifications-title">
+      <div class="section-header">
+        <h2 id="certifications-title" class="section-title">Certifications</h2>
+        <div class="section-controls" role="group" aria-label="Scroll certifications">
+          <button class="scroll-btn prev" type="button" aria-label="Scroll left">‹</button>
+          <button class="scroll-btn next" type="button" aria-label="Scroll right">›</button>
+        </div>
+      </div>
+      <div class="horizontal-scroller">
+        <div class="intro-text-card">A collection of my certifications.</div>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/6BJ2XBPR9CJW" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Convolutional Neural Networks</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/records/8LYV52ZTXAQM" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/records/TUXVZN8S5YEL" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Structuring Machine Learning Projects</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/records/26CSDSTMFC9U" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/records/88HHK4NH27DY" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Shortest Paths Revisited, NP-Complete Problems and What To Do About Them</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https.com/account/accomplishments/records/XF6FG3KKHWLZ" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Graph Search, Shortest Paths, and Data Structures</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/AKLNG7PDAZVJ" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Divide and Conquer, Sorting and Searching, and Randomized Algorithms</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/JYU6UV86XUH4" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Neural Networks and Deep Learning</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/J62EVFKPRA8L" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/deeplearning.webp" alt="">
+            <div class="card-content">
+              <h3>Probability & Statistics for Machine Learning & Data Science</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/WNPA53Q258R8" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/deeplearning.webp" alt="">
+            <div class="card-content">
+              <h3>Calculus for Machine Learning and Data Science</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https.com/account/accomplishments/certificate/CKQQKNFGVNVN" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/deeplearning.webp" alt="">
+            <div class="card-content">
+              <h3>Linear Algebra for Machine Learning and Data Science</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/XZDQYSLJVUGR" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Advanced Learning Algorithms</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.efset.org/cert/yYaG8k" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/EFSETlogo.png" alt="">
+            <div class="card-content">
+              <h3>English C2 Proficiency (EF SET)</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/8JFZEVPYF3KM" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/Yale_University_logo.svg" alt="">
+            <div class="card-content">
+              <h3>Introduction to Psychology</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/RR4EZFBEK5K4" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Unsupervised Learning, Recommenders, Reinforcement Learning</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/certificate/8NJRRSKSWKVZ" class="card-anchor">
+          <div class="image-text-card">
+            <img src="assets/img/stanford.png" alt="">
+            <div class="card-content">
+              <h3>Supervised Machine Learning: Regression and Classification</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Email: <a href="mailto:iyed.nasra.in@gmail.com">iyed.nasra.in@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/iyed-nasra">linkedin.com/in/iyed-nasra</a></p>
+    <p>&copy; 2025 Iyed Nasra</p>
+  </footer>
+
+  <script>
+    (function () {
+      const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+      function stepFor(scroller){
+        const card = scroller?.querySelector(':scope > *');
+        const w = card ? card.getBoundingClientRect().width : 0;
+        return Math.max(320, Math.round(w || scroller.offsetWidth * 0.9));
+      }
+      function scroll(scroller, dir){
+        const amount = dir * stepFor(scroller);
+        if(prefersReduced){
+          const old = scroller.style.scrollBehavior;
+          scroller.style.scrollBehavior = 'auto';
+          scroller.scrollBy({left:amount, top:0});
+          scroller.style.scrollBehavior = old || '';
+        }else{
+          scroller.scrollBy({left:amount, top:0, behavior:'smooth'});
+        }
+      }
+      function wireButtons(){
+        document.querySelectorAll('.horizontal-scroller').forEach(scroller=>{
+          const section = scroller.closest('section');
+          const prev = section?.querySelector('.scroll-btn.prev');
+          const next = section?.querySelector('.scroll-btn.next');
+          if(prev) prev.addEventListener('click', ()=>scroll(scroller,-1));
+          if(next) next.addEventListener('click', ()=>scroll(scroller, 1));
+        });
+      }
+      function enableDragScroll(){
+        document.querySelectorAll('.horizontal-scroller').forEach(s=>{
+          let active=false, startX=0, startLeft=0;
+          s.addEventListener('pointerdown', e=>{
+            active=true; startX=e.clientX; startLeft=s.scrollLeft;
+            s.setPointerCapture(e.pointerId); s.style.cursor='grabbing';
+          });
+          s.addEventListener('pointermove', e=>{
+            if(!active) return; s.scrollLeft = startLeft - (e.clientX - startX);
+          });
+          ['pointerup','pointercancel','pointerleave'].forEach(t=>{
+            s.addEventListener(t, ()=>{ active=false; s.style.cursor=''; });
+          });
+        });
+      }
+      if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded', ()=>{ wireButtons(); enableDragScroll(); }, {once:true});
+      }else{
+        wireButtons(); enableDragScroll();
+      }
+    })();
+  </script>
+</body>
+</html>

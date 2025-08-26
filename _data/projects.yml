@@ -1,0 +1,19 @@
+- title: "Master’s Thesis — Choquet Fuzzy Integral Based Ensemble Learning for Credit Score Modelling"
+  context: "Supervisor: Mr. Tawfik Ben Amor (ESEN). The project addresses the rigidity of traditional credit scoring by composing neural and boosting models, then fusing predictions through the Choquet fuzzy integral to account for model interdependencies."
+  stack: "Ensemble Learning, Neural Networks, Boosting Models, Choquet Fuzzy Integral"
+  outcomes: "The hybrid approach improved performance over standalone models by approximately 6% and exceeded statistical baselines by approximately 25% on real financial datasets, with careful visualization and validation."
+  links: {}
+
+- title: "Ooredoo Tunisia — Computer Vision Engineer Intern"
+  period: "Aug 2023"
+  context: "Goal: robust extraction from passport machine-readable zones."
+  stack: "Computer Vision, API Development"
+  outcomes: "A production-ready model served via API with accuracy above 95%, reducing per-interaction time by several minutes for agents and clients and enabling rapid form population."
+  links: {}
+
+- title: "DigiBrain Agency — Data Analyst Intern"
+  period: "Feb–May 2022"
+  context: "Goal: maintain real-time awareness of “Startup Act” site updates."
+  stack: "Python, Power BI, Web Scraping"
+  outcomes: "Python scraper for live ingestion, automated cleaning, and Power BI dashboards, establishing a reliable data pipeline for dynamic visualizations."
+  links: {}
